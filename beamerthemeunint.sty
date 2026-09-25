@@ -1,9 +1,9 @@
-% Template for Sapienza presentations with LaTeX beamer.
+% Template for UNINT presentations with LaTeX beamer.
 %
 % Adapted by Andrea Gasparini, andrea@gasparini.cloud for
-% Sapienza presentations.
+% UNINT presentations.
 % 
-% Original template by Federico Zenith, federico.zenith@sintef.no.
+% Original template by Federico Zenith, federico.zenith@unint.no.
 % Derived (through several iterations) from Håvard Berland's
 % beamerthementnu class.
 %
@@ -21,7 +21,7 @@
 % You should have received a copy of the GNU General Public License
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-\ProvidesPackage{beamerthemesintef}[2021/11/02]
+\ProvidesPackage{beamerthemeunint}[2021/11/02]
 
 \RequirePackage{etoolbox}
 \RequirePackage{tikz}
@@ -38,10 +38,12 @@
 \geometry{paperwidth=16cm,paperheight=9cm}
 
 % Caladea is a Cambria clone, Carlito a Calibri clone
-\RequirePackage{caladea,carlito}
+% Calibri/Cambria-metric fonts when available (Overleaf, texlive-fonts-extra),
+% Helvetica otherwise, so the theme compiles on a bare TeX Live.
+\IfFileExists{carlito.sty}{\RequirePackage{caladea,carlito}}{\RequirePackage{helvet}}
 \renewcommand{\familydefault}{\sfdefault}
 
-\RequirePackage{graphicx,sintefcolor}
+\RequirePackage{graphicx,unintcolor}
 
 % No navigation symbols
 \setbeamertemplate{navigation symbols}{}
@@ -77,8 +79,8 @@
 }
 \footlinecolor{} % Default: no footline
 
-\pgfdeclareimage[width=0.09\paperwidth]{logo}{assets/logo_RGB}
-\pgfdeclareimage[width=0.09\paperwidth]{whitelogo}{assets/logo_RGB_negative}
+\pgfdeclareimage[width=0.13\paperwidth]{logo}{assets/logo_mark}
+\pgfdeclareimage[width=0.13\paperwidth]{whitelogo}{assets/logo_mark_negative}
 \newcommand{\@logo}{logo}
 
 % Set colours
@@ -91,21 +93,21 @@
 		\setbeamercolor{normal text}{fg=white,bg=maincolor}
 		\setbeamercolor{structure}{fg=white}
 		\renewcommand{\@logo}{whitelogo}
-		\setbeamercolor{block title}{fg=maincolor,bg=sintefgrey}
-		\setbeamercolor{block body}{fg=darkgray,bg=sintefgrey}
+		\setbeamercolor{block title}{fg=maincolor,bg=unintgrey}
+		\setbeamercolor{block body}{fg=darkgray,bg=unintgrey}
 	}{%
         \setbeamercolor{footline}{fg=darkgray}
 		\setbeamercolor{normal text}{fg=darkgray,bg=white}
 		\setbeamercolor{structure}{fg=maincolor}
 		\renewcommand{\@logo}{logo}
 		\setbeamercolor{block title}{fg=white,bg=maincolor}
-		\setbeamercolor{block body}{fg=darkgray,bg=sintefgrey}
+		\setbeamercolor{block body}{fg=darkgray,bg=unintgrey}
 	}
 }
 \themecolor{white} % Default: white theme
 
 \setbeamercolor{title}{fg=maincolor,bg=white}
-\setbeamercolor{alerted text}{fg=sintefred}
+\setbeamercolor{alerted text}{fg=unintred}
 \setbeamercolor{author}{fg=black}
 \setbeamercolor{date}{fg=black}
 
@@ -136,13 +138,13 @@
 	\endgroup
 }
 
-% Put the logo in each slide's top left area
-\setbeamertemplate{headline}{\hspace{0.06\textwidth}\pgfuseimage{\@logo}}
+% Put the logo in each slide's top right area
+\setbeamertemplate{headline}{\hfill\pgfuseimage{\@logo}\hspace{0.06\textwidth}}
 
 % Define frame title and subtitle layout
 \setbeamertemplate{frametitle}{%
-  \vspace*{-3.5ex}
-  \begin{beamercolorbox}[leftskip=2cm]{frametitle}%
+  \vspace*{0.5ex}
+  \begin{beamercolorbox}[leftskip=0.8cm,rightskip=3.3cm]{frametitle}%
     \usebeamerfont{frametitle}\insertframetitle\\
     \usebeamerfont{framesubtitle}\insertframesubtitle
   \end{beamercolorbox}

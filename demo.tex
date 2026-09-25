@@ -1,6 +1,6 @@
 \documentclass{beamer}
-\usepackage{amsfonts,amsmath,oldgerm}
-\usetheme{sintef}
+\usepackage{amsfonts,amsmath}
+\usetheme{unint}
 
 \newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
 
@@ -10,7 +10,7 @@
 
 \newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
 
-\title{Sapienza Beamer Presentation Theme}
+\title{UNINT Beamer Presentation Theme}
 \subtitle{Using \LaTeX\ to prepare slides}
 \course{Master's Degree in Computer Science}
 \author{\href{mailto:andrea@gasparini.cloud}{Andrea Gasparini}}
@@ -22,11 +22,11 @@
 
 \begin{frame}
 
-This template is a based on \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation} from \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} and its derivation \hrefcol{https://github.com/TOB-KNPOB/Beamer-LaTeX-Themes}{Beamer-LaTeX-Themes} from Liu Qilong
+This template is a based on \hrefcol{https://www.overleaf.com/latex/templates/unint-presentation/jhbhdffczpnx}{UNINT Presentation} from \hrefcol{mailto:federico.zenith@unint.no}{Federico Zenith} and its derivation \hrefcol{https://github.com/TOB-KNPOB/Beamer-LaTeX-Themes}{Beamer-LaTeX-Themes} from Liu Qilong
 
 \vspace{\baselineskip}
 
-In the following you find a brief introduction on how to use \LaTeX\ and the beamer package to prepare slides, based on the one written by \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} for \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation}
+In the following you find a brief introduction on how to use \LaTeX\ and the beamer package to prepare slides, based on the one written by \hrefcol{mailto:federico.zenith@unint.no}{Federico Zenith} for \hrefcol{https://www.overleaf.com/latex/templates/unint-presentation/jhbhdffczpnx}{UNINT Presentation}
 
 % This template is released under \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0} license
 
@@ -34,7 +34,7 @@ In the following you find a brief introduction on how to use \LaTeX\ and the bea
 
 \section{Introduction}
 
-\begin{frame}{Beamer for SINTEF slides}
+\begin{frame}{Beamer for UNINT slides}
 \begin{itemize}
 \item We assume you can use \LaTeX; if you cannot,
 \hrefcol{http://en.wikibooks.org/wiki/LaTeX/}{you can learn it here}
@@ -67,12 +67,12 @@ you write the content, the computer does the typesetting
 \end{frame}
 
 \begin{frame}[fragile]{Getting Started}
-\framesubtitle{Selecting the SINTEF Theme}
-To start working with \texttt{sintefbeamer}, start a \LaTeX\ document with the
+\framesubtitle{Selecting the UNINT Theme}
+To start working with \texttt{unintbeamer}, start a \LaTeX\ document with the
 preamble:
-\begin{block}{Minimum SINTEF Beamer Document}
+\begin{block}{Minimum UNINT Beamer Document}
 \verb|\documentclass{beamer}|\\
-\verb|\usetheme{sintef}|\\
+\verb|\usetheme{unint}|\\
 \verb|\begin{document}|\\
 \verb|\begin{frame}{Hello, world!}|\\
 \verb|\end{frame}|\\
@@ -121,7 +121,7 @@ will be clipped to a split view on the right side of the title slide.
 
 \section{Personalization}
 
-\footlinecolor{sintefyellow}
+\footlinecolor{unintyellow}
 \begin{frame}[fragile]{Changing Slide Style}
 \begin{itemize}
 \item You can select the white or \textit{maincolor} \textbf{slide style} \emph{in the 
@@ -137,8 +137,8 @@ preamble} with \verb|\themecolor{white}| (default) or \verb|\themecolor{main}|
       \begin{itemize}
       \item Place the command \emph{before} a new \verb|frame|
       \item There are four ``official'' colors: 
-      \testcolor{maincolor}, \testcolor{sintefyellow}, 
-      \testcolor{sintefgreen}, \testcolor{sintefdarkgreen}
+      \testcolor{maincolor}, \testcolor{unintyellow}, 
+      \testcolor{unintgreen}, \testcolor{unintdarkgreen}
       \item Default is no footline; you can restore it with 
       \verb|\footlinecolor{}|
       \item Others may work, but no guarantees!
@@ -160,19 +160,19 @@ content...
 \end{block}
 \end{column}
 \begin{column}{0.7\textwidth}
-\begin{colorblock}[black]{sinteflightgreen}{Colour Blocks}
+\begin{colorblock}[black]{unintlightgreen}{Colour Blocks}
 Similar to the ones on the left, but you pick the colour. Text will be white by 
 default, but you may set it with an optional argument.
 \small
 \begin{verbatim}
-\begin{colorblock}[black]{sinteflightgreen}{title}
+\begin{colorblock}[black]{unintlightgreen}{title}
 content...
 \end{colorblock}
 \end{verbatim}
 \end{colorblock}
-The ``official'' colours of colour blocks are: \testcolor{sinteflilla}, 
-\testcolor{maincolor}, \testcolor{sintefdarkgreen}, and 
-\testcolor{sintefyellow}.
+The ``official'' colours of colour blocks are: \testcolor{unintlilla}, 
+\testcolor{maincolor}, \testcolor{unintdarkgreen}, and 
+\testcolor{unintyellow}.
 \end{column}
 \end{columns}
 \end{frame}
@@ -182,18 +182,18 @@ The ``official'' colours of colour blocks are: \testcolor{sinteflilla},
 \begin{itemize}[<alert@2>]
   \item You can use colours with the
         \verb|\textcolor{<color name>}{text}| command
-  \item The colours are defined in the \texttt{sintefcolor} package:
+  \item The colours are defined in the \texttt{unintcolor} package:
   \begin{itemize}
   \item Primary colours: \testcolor{maincolor} and its sidekick 
-  \testcolor{sintefgrey}
-  \item Three shades of green: \testcolor{sinteflightgreen}, 
-  \testcolor{sintefgreen}, \testcolor{sintefdarkgreen}
-  \item Additional colours: \testcolor{sintefyellow}, \testcolor{sintefred}, 
-        \testcolor{sinteflilla}
+  \testcolor{unintgrey}
+  \item Three shades of green: \testcolor{unintlightgreen}, 
+  \testcolor{unintgreen}, \testcolor{unintdarkgreen}
+  \item Additional colours: \testcolor{unintyellow}, \testcolor{unintred}, 
+        \testcolor{unintlilla}
         \begin{itemize}
-        \item These may be shaded---see the \verb|sintefcolor| documentation or 
-        the \hrefcol{https://sintef.sharepoint.com/sites/stottetjenester/%
-        kommunikasjon/grafisk-profil-new/Sider/default.aspx}{SINTEF profile 
+        \item These may be shaded---see the \verb|unintcolor| documentation or 
+        the \hrefcol{https://unint.sharepoint.com/sites/stottetjenester/%
+        kommunikasjon/grafisk-profil-new/Sider/default.aspx}{UNINT profile 
         manual}
         \end{itemize}
   \end{itemize}
@@ -256,16 +256,16 @@ And this the second
 \end{itemize}
 \end{chapter}
 
-\footlinecolor{sintefred}
+\footlinecolor{unintred}
 \begin{frame}[fragile]{Chapter slides}
 \begin{itemize}
 \item Similar to \verb|frame|s, but with a few more options
 \item Opened with \verb|\begin{chapter}[<image>]{<color>}{<title>}|
 \item Image is optional, colour and title are mandatory
 \item There are seven ``official'' colours: \testcolor{maincolor}, 
-\testcolor{sintefdarkgreen}, \testcolor{sintefgreen}, 
-\testcolor{sinteflightgreen}, \testcolor{sintefred}, \testcolor{sintefyellow}, 
-\testcolor{sinteflilla}.
+\testcolor{unintdarkgreen}, \testcolor{unintgreen}, 
+\testcolor{unintlightgreen}, \testcolor{unintred}, \testcolor{unintyellow}, 
+\testcolor{unintlilla}.
       \begin{itemize}
       \item Strangely enough, these are \emph{more} than the official colours 
       for the footline.
@@ -276,7 +276,7 @@ And this the second
 \end{itemize}
 \end{frame}
 
-\begin{sidepic}{assets/background_alternative}{Side-Picture Slides}
+\begin{sidepic}{assets/background_negative}{Side-Picture Slides}
 \begin{itemize}
 \item Opened with \texttt{$\backslash$begin\{sidepic\}\{<image>\}\{<title>\}}
 \item Otherwise, \texttt{sidepic} works just like \texttt{frame}
@@ -297,7 +297,7 @@ them)}}
 \item ... and not so good ones:
   \begin{itemize}
   \item {\texttt{Never use monospace for normal text}}
-  \item {\frakfamily Gothic, calligraphic or weird fonts: should always: be
+  \item {Gothic, calligraphic or weird fonts: should always: be
   avoided}
 \end{itemize}
 \end{itemize}
@@ -315,7 +315,7 @@ them)}}
       16:9 presentation to 4:3 one; spacings \emph{will} break
       \begin{itemize}
       \item The \texttt{aspectratio} argument to the \texttt{beamer} class is
-            overridden by the SINTEF theme
+            overridden by the UNINT theme
       \item If you \emph{really} know what you are doing, check the package
             code and look for the \texttt{geometry} class.
       \end{itemize}
@@ -328,8 +328,8 @@ them)}}
 \frametitle{Good Luck!}
 \begin{itemize}
 \item Enough for an introduction! You should know enough by now
-\item If you have any suggestions or corrections, feel free to contribute to the \hrefcol{https://github.com/andrea-gasparini/sapienza-beamer-template}{GitHub repository}!
-You can \hrefcol{https://github.com/andrea-gasparini/sapienza-beamer-template/issues/new/choose}{open an issue} or \hrefcol{https://github.com/andrea-gasparini/sapienza-beamer-template/fork}{fork the project} and directly propose your changes with a Pull Request. 
+\item If you have any suggestions or corrections, feel free to contribute to the \hrefcol{https://github.com/EmanueleMusumeci/unint-beamer-template}{GitHub repository}!
+You can \hrefcol{https://github.com/EmanueleMusumeci/unint-beamer-template/issues/new/choose}{open an issue} or \hrefcol{https://github.com/EmanueleMusumeci/unint-beamer-template/fork}{fork the project} and directly propose your changes with a Pull Request. 
 \end{itemize}
 \end{frame}
 
