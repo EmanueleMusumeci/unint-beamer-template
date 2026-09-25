@@ -275,6 +275,11 @@
 }
 
 % Define backmatter
+% Closing message on the final slide; override with \thanksmessage{...}
+% (deliberately no @ in the name: @ is not a letter at this point in the file)
+\def\unintthanks{Thank you for listening! \\ Any questions?}
+\newcommand{\thanksmessage}[1]{\def\unintthanks{#1}}
+
 \newcommand{\backmatter}[1][]{
 \begingroup
   \themecolor{main}
@@ -284,10 +289,10 @@
       \usebeamercolor[fg]{normal text}
       \centering
       \ifstrequal{#1}{notitle}{}{
-        \Huge \inserttitle
+        \Huge \inserttitle\par
         \vspace{5mm}
       }
-      \Large \textsl{Thank you for listening! \\ Any questions?}
+      \Large \textsl{\unintthanks}
     \end{minipage}
   \end{frame}
 \endgroup
